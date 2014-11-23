@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace thirdlab
+namespace thirdlab.ObjMod
 {
     public delegate void PosChangedEventHandler();
     public class Game
@@ -28,6 +28,7 @@ namespace thirdlab
         public int currentScore = 0;
         public Bitmap img;
         public int Width = 500;
+        public bool canGo = false;
 
         internal void FillPitch(Graphics g)
         {
@@ -147,6 +148,11 @@ namespace thirdlab
             CreateAdduction("Right", 2, 14, 17);
         }
 
+        internal void LevelSecond()
+        {
+            CreateYWall(0, 3, 1);
+        }
+
         internal void CreateGoldWall(int startX, int endX, int startY, int endY)
         {
             for (int x = startX; x <= endX; x++)
@@ -175,12 +181,36 @@ namespace thirdlab
             return new int[] { 0, 0 };
         }
 
-        internal void StartGame(Graphics g)
+        internal void StartGame(Graphics g, string textBox)
         {
             HeroPosition = new int[2] { 0, 0 };
-            LevelFirst();
+            switch (textBox)
+            {   case "1":
+                LevelFirst();
+                break;
+            case "2":
+                LevelSecond();
+                break;
+            case "3":
+                LevelThird();
+                break;
+            case "Случайно-сгенерированный":
+                LevelRandom();
+                break;
+            }
             FillPitch(g);
         }
+
+        private void LevelRandom()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void LevelThird()
+        {
+            throw new NotImplementedException();
+        }
+
 
         internal Rectangle CreateRect(int[] coords)
         {

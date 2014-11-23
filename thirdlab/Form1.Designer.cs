@@ -33,12 +33,8 @@
             this.StartButton = new System.Windows.Forms.Button();
             this.ScoreLabel = new System.Windows.Forms.Label();
             this.MonstersTimer = new System.Windows.Forms.Timer(this.components);
-            this.EditButton = new System.Windows.Forms.Button();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
-            this.скинToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.открытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip2.SuspendLayout();
+            this.lvlChoosingComboBox = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // PanelForGame
@@ -51,7 +47,7 @@
             // 
             // StartButton
             // 
-            this.StartButton.Location = new System.Drawing.Point(609, 71);
+            this.StartButton.Location = new System.Drawing.Point(614, 148);
             this.StartButton.Name = "StartButton";
             this.StartButton.Size = new System.Drawing.Size(161, 74);
             this.StartButton.TabIndex = 1;
@@ -73,61 +69,43 @@
             this.MonstersTimer.Interval = 150;
             this.MonstersTimer.Tick += new System.EventHandler(this.MonstersTimer_Tick);
             // 
-            // EditButton
+            // lvlChoosingComboBox
             // 
-            this.EditButton.Location = new System.Drawing.Point(609, 151);
-            this.EditButton.Name = "EditButton";
-            this.EditButton.Size = new System.Drawing.Size(161, 74);
-            this.EditButton.TabIndex = 3;
-            this.EditButton.Text = "Редактировать скин";
-            this.EditButton.UseVisualStyleBackColor = true;
-            this.EditButton.Click += new System.EventHandler(this.button1_Click);
+            this.lvlChoosingComboBox.FormattingEnabled = true;
+            this.lvlChoosingComboBox.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "Случайно-сгенерированный"});
+            this.lvlChoosingComboBox.Location = new System.Drawing.Point(614, 95);
+            this.lvlChoosingComboBox.Name = "lvlChoosingComboBox";
+            this.lvlChoosingComboBox.Size = new System.Drawing.Size(161, 21);
+            this.lvlChoosingComboBox.TabIndex = 3;
             // 
-            // openFileDialog1
+            // label1
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // menuStrip2
-            // 
-            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.скинToolStripMenuItem});
-            this.menuStrip2.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(817, 24);
-            this.menuStrip2.TabIndex = 5;
-            this.menuStrip2.Text = "menuStrip2";
-            // 
-            // скинToolStripMenuItem
-            // 
-            this.скинToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.открытьToolStripMenuItem});
-            this.скинToolStripMenuItem.Name = "скинToolStripMenuItem";
-            this.скинToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
-            this.скинToolStripMenuItem.Text = "Скин";
-            // 
-            // открытьToolStripMenuItem
-            // 
-            this.открытьToolStripMenuItem.Name = "открытьToolStripMenuItem";
-            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
-            this.открытьToolStripMenuItem.Text = "Открыть";
-            this.открытьToolStripMenuItem.Click += new System.EventHandler(this.открытьToolStripMenuItem_Click);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(643, 71);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(101, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Выберите уровень";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(817, 583);
-            this.Controls.Add(this.EditButton);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lvlChoosingComboBox);
             this.Controls.Add(this.ScoreLabel);
             this.Controls.Add(this.StartButton);
             this.Controls.Add(this.PanelForGame);
-            this.Controls.Add(this.menuStrip2);
             this.KeyPreview = true;
+            this.MinimumSize = new System.Drawing.Size(833, 621);
             this.Name = "Form1";
             this.Text = "Form1";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
-            this.menuStrip2.ResumeLayout(false);
-            this.menuStrip2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,11 +117,8 @@
         private System.Windows.Forms.Button StartButton;
         private System.Windows.Forms.Label ScoreLabel;
         private System.Windows.Forms.Timer MonstersTimer;
-        private System.Windows.Forms.Button EditButton;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.MenuStrip menuStrip2;
-        private System.Windows.Forms.ToolStripMenuItem скинToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem открытьToolStripMenuItem;
+        private System.Windows.Forms.ComboBox lvlChoosingComboBox;
+        private System.Windows.Forms.Label label1;
     }
 }
 

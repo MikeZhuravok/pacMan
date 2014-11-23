@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace thirdlab
+namespace thirdlab.ObjMod
 {
     public class Adduction
     {

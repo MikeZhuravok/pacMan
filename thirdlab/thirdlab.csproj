@@ -44,32 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Adduction.cs" />
+    <Compile Include="ObjMod\Adduction.cs" />
     <Compile Include="CreateIconImage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CreateIconImage.Designer.cs">
       <DependentUpon>CreateIconImage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ObjMod\CustomButton.cs" />
-    <Compile Include="EditAdd.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EditAdd.Designer.cs">
-      <DependentUpon>EditAdd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ObjMod\CustomAdduction.cs" />
-    <Compile Include="Edit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Edit.Designer.cs">
-      <DependentUpon>Edit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FontChoose.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FontChoose.Designer.cs">
-      <DependentUpon>FontChoose.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -77,35 +57,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="ObjMod\CustomLabel.cs" />
-    <Compile Include="ObjMod\CustomPanel.cs" />
     <Compile Include="ObjMod\Game.cs" />
-    <Compile Include="ObjMod\Skin.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SizeChange.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SizeChange.Designer.cs">
-      <DependentUpon>SizeChange.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SizeChangeAdd.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SizeChangeAdd.Designer.cs">
-      <DependentUpon>SizeChangeAdd.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="CreateIconImage.resx">
       <DependentUpon>CreateIconImage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Edit.resx">
-      <DependentUpon>Edit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EditAdd.resx">
-      <DependentUpon>EditAdd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FontChoose.resx">
-      <DependentUpon>FontChoose.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -120,12 +76,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="SizeChange.resx">
-      <DependentUpon>SizeChange.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SizeChangeAdd.resx">
-      <DependentUpon>SizeChangeAdd.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

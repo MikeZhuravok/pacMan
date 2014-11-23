@@ -1,4 +1,5 @@
-﻿using System;
+﻿using thirdlab.ObjMod;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,18 +10,16 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using thirdlab.ObjMod;
 
 namespace thirdlab
 {
     public partial class Form1 : Form
     {
-        public Game game;
+        public Game game; 
         public Form1()
         {
             InitializeComponent();
         }
-
 
         public void RefreshImage()
         {
@@ -39,7 +38,7 @@ namespace thirdlab
             game.img = new Bitmap(PanelForGame.ClientSize.Width, PanelForGame.ClientSize.Height);
             game.ImageChanged += RefreshImage;
             Graphics g = PanelForGame.CreateGraphics();
-            game.StartGame(g);
+            game.StartGame(g, lvlChoosingComboBox.Text);
             MonstersTimer.Start();
         }
 
@@ -53,7 +52,7 @@ namespace thirdlab
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (game != null)
+            if (game != null && game.canGo)
             {
                 if (e.KeyData == Keys.Up || e.KeyData == Keys.W)
                 {
@@ -71,6 +70,8 @@ namespace thirdlab
                 {
                     game.MakeMove("Right");
                 }
+                if (game != null)
+                    game.canGo = false;
             }
         }
 
@@ -78,47 +79,9 @@ namespace thirdlab
         {
             game.MoveMonsters();
             RefreshImage();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Edit edit = new Edit();
-            edit.ShowDialog();
-        }
-
-        private void открытьToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                try
-                {
-                    BinaryFormatter bf = new BinaryFormatter();
-                    Skin skin;
-                    using (FileStream fs = new FileStream(openFileDialog1.FileName, FileMode.Open))
-                    {
-                        skin = (Skin)bf.Deserialize(fs);
-                    }
-                    if (skin.Score.CustomFont != null)
-                        ScoreLabel.Font = skin.Score.CustomFont;
-                    ScoreLabel.Location = skin.Score.LeftTop;
-                    StartButton.Location = skin.Start.LeftTop;
-                    if (skin.Start.CustomFont != null)
-                        StartButton.Font = skin.Start.CustomFont;
-                    if (skin.adduct.first != null)
-                    {
-                        game.FirstIcon = Switcher(skin.adduct.first);
-                        game.SecondIcon = Switcher(skin.adduct.second);
-                    }
-                    EditButton.Location = skin.Edit.LeftTop;
-                    if (skin.Edit.CustomFont != null)
-                        EditButton.Font = skin.Edit.CustomFont;
-
-                }
-                catch
-                {
-                    MessageBox.Show("Скин имел неподходящий формат  - игра не поменяла внешний вид.");
-                }
-            }
+            if (game != null)
+                if (!game.canGo)
+                    game.canGo = true;
         }
 
         internal Image Switcher(string variant)
