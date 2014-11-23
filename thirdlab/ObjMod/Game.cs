@@ -230,8 +230,9 @@ namespace thirdlab.ObjMod
 
         internal void MoveMonsters()
         {
-            foreach (Adduction ad in Monsters)
-                ad.MoveAddiction();
+            if (Monsters != null)
+                foreach (Adduction ad in Monsters)
+                    ad.MoveAddiction();
         }
 
         internal void CreateAdduction(string side, int startX, int startY, int end)

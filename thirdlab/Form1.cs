@@ -19,6 +19,7 @@ namespace thirdlab
         public Form1()
         {
             InitializeComponent();
+            lvlChoosingComboBox.Text = "1";
         }
 
         public void RefreshImage()
