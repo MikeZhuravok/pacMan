@@ -150,7 +150,15 @@ namespace thirdlab.ObjMod
 
         internal void LevelSecond()
         {
-            CreateYWall(0, 3, 1);
+            CreateYWall(0, 2, 1);
+            CreateXWall(1, 4, 1);
+            CreateYWall(2, 3, 3);
+            CreateAdduction("Right", 0, 3, 3);
+            CreateGoldWall(3, 3, 4, 4);
+            CreateXWall(0, 3, 4);
+            CreateYWall(4, 6, 2);
+            CreateYWall(2, 6, 4);
+            //CreateGoldWall()
         }
 
         internal void CreateGoldWall(int startX, int endX, int startY, int endY)
